@@ -1,212 +1,223 @@
-[![PyPI version](https://badge.fury.io/py/pyautogen.svg)](https://badge.fury.io/py/pyautogen)
-[![Build](https://github.com/microsoft/autogen/actions/workflows/python-package.yml/badge.svg)](https://github.com/microsoft/autogen/actions/workflows/python-package.yml)
-![Python Version](https://img.shields.io/badge/3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue)
-[![](https://img.shields.io/discord/1153072414184452236?logo=discord&style=flat)](https://discord.gg/pAbnFJrkgZ)
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><p dir="auto"><a href="https://badge.fury.io/py/pyautogen" rel="nofollow"><img src="https://camo.githubusercontent.com/81453b657707fe03568d5391fbd50c8b00af19072717fcef185735158cfcebf1/68747470733a2f2f62616467652e667572792e696f2f70792f70796175746f67656e2e737667" alt="PyPI版本" data-canonical-src="https://badge.fury.io/py/pyautogen.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/microsoft/autogen/actions/workflows/python-package.yml"><img src="https://github.com/microsoft/autogen/actions/workflows/python-package.yml/badge.svg" alt="建造" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f73e94734a712d92f5d1f251086ee6df89776de05d5490b5c945f49fbafd9ea3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f332e38253230253743253230332e39253230253743253230332e3130253230253743253230332e31312d626c7565"><img src="https://camo.githubusercontent.com/f73e94734a712d92f5d1f251086ee6df89776de05d5490b5c945f49fbafd9ea3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f332e38253230253743253230332e39253230253743253230332e3130253230253743253230332e31312d626c7565" alt="Python版本" data-canonical-src="https://img.shields.io/badge/3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue" style="max-width: 100%;"></a>
+<a href="https://pepy.tech/project/pyautogen" rel="nofollow"><img src="https://camo.githubusercontent.com/657d09b6b4cd0fcdfcf4bd17de10f9c0965e05e2a4d933b1c10ab2986818afb0/68747470733a2f2f7374617469632e706570792e746563682f62616467652f70796175746f67656e2f7765656b" alt="下载" data-canonical-src="https://static.pepy.tech/badge/pyautogen/week" style="max-width: 100%;"></a>
+<a href="https://discord.gg/pAbnFJrkgZ" rel="nofollow"><img src="https://camo.githubusercontent.com/b351cb80849097474b6d832d0b3335952d717e7366eea88893eb00fa90eda406/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f313135333037323431343138343435323233363f6c6f676f3d646973636f7264267374796c653d666c6174" alt="" data-canonical-src="https://img.shields.io/discord/1153072414184452236?logo=discord&amp;style=flat" style="max-width: 100%;"></a>
+<a href="https://twitter.com/pyautogen" rel="nofollow"><img src="https://camo.githubusercontent.com/1e6d49b7e5c666d3644cccd7e2b761dc6333227ee131e9f544e1b0901f971f3a/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f75726c2f68747470732f747769747465722e636f6d2f636c6f7564706f7373652e7376673f7374796c653d736f6369616c266c6162656c3d466f6c6c6f7725323025343070796175746f67656e" alt="推特" data-canonical-src="https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&amp;label=Follow%20%40pyautogen" style="max-width: 100%;"></a></p>
+<h1 tabindex="-1" dir="auto"><a id="user-content-autogen" class="anchor" aria-hidden="true" tabindex="-1" href="#autogen"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动生成器</font></font></h1>
+<p dir="auto"><a href="#related-papers"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📚 引用论文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
 
-This project is a spinoff from [FLAML](https://github.com/microsoft/FLAML).
-
-# AutoGen
-
-<!-- <p align="center">
-    <img src="https://github.com/microsoft/autogen/blob/main/website/static/img/flaml.svg"  width=200>
-    <br>
-</p> -->
-
-:fire: autogen has graduated from [FLAML](https://github.com/microsoft/FLAML) into a new project.
-
-<!-- :fire: Heads-up: We're preparing to migrate [autogen](https://microsoft.github.io/FLAML/docs/Use-Cases/Autogen) into a dedicated Github repository. Alongside this move, we'll also launch a dedicated Discord server and a website for comprehensive documentation.
-
-:fire: FLAML is highlighted in OpenAI's [cookbook](https://github.com/openai/openai-cookbook#related-resources-from-around-the-web).
-
-:fire: [autogen](https://microsoft.github.io/autogen/) is released with support for ChatGPT and GPT-4, based on [Cost-Effective Hyperparameter Optimization for Large Language Model Generation Inference](https://arxiv.org/abs/2303.04673).
-
-:fire: FLAML supports Code-First AutoML & Tuning – Private Preview in [Microsoft Fabric Data Science](https://learn.microsoft.com/en-us/fabric/data-science/). -->
-
-## What is AutoGen
-
-AutoGen is a framework that enables the development of LLM applications using multiple agents that can converse with each other to solve tasks. AutoGen agents are customizable, conversable, and seamlessly allow human participation. They can operate in various modes that employ combinations of LLMs, human inputs, and tools.
-
-![AutoGen Overview](https://github.com/microsoft/autogen/blob/main/website/static/img/autogen_agentchat.png)
-
-- AutoGen enables building next-gen LLM applications based on **multi-agent conversations** with minimal effort. It simplifies the orchestration, automation, and optimization of a complex LLM workflow. It maximizes the performance of LLM models and overcomes their weaknesses.
-- It supports **diverse conversation patterns** for complex workflows. With customizable and conversable agents, developers can use AutoGen to build a wide range of conversation patterns concerning conversation autonomy,
-  the number of agents, and agent conversation topology.
-- It provides a collection of working systems with different complexities. These systems span a **wide range of applications** from various domains and complexities. This demonstrates how AutoGen can easily support diverse conversation patterns.
-- AutoGen provides a drop-in replacement of `openai.Completion` or `openai.ChatCompletion` as an **enhanced inference API**. It allows easy performance tuning, utilities like API unification and caching, and advanced usage patterns, such as error handling, multi-config inference, context programming, etc.
-
-AutoGen is powered by collaborative [research studies](https://microsoft.github.io/autogen/docs/Research) from Microsoft, Penn State University, and the University of Washington.
-
-## Quickstart
-The easiest way to start playing is
-1. Click below to use the Github Codespace
-
-    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/autogen?quickstart=1)
-
- 2. Copy OAI_CONFIG_LIST_sample to /notebook folder, name to OAI_CONFIG_LIST, and set the correct config.
- 3. Start playing with the notebooks!
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔥 12 月 31 日：</font></font><a href="https://arxiv.org/abs/2308.08155" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AutoGen：通过多智能体对话框架启用下一代 LLM 应用程序</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">被</font></font><a href="https://thesequence.substack.com/p/my-five-favorite-ai-papers-of-2023" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TheSequence 评选：2023 年我最喜欢的五篇 AI 论文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
 
 
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔥 11 月 8 日：AutoGen 在推出 35 天后</font><font style="vertical-align: inherit;">入选</font></font><a href="https://www.benchcouncil.org/evaluation/opencs/annual.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Open100：前 100 名开源成就。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://youtu.be/0pLBvgYtv6U" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔥 11 月 6 日：Satya Nadella 在 13:20 左右的炉边谈话</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中提到了 AutoGen </font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🔥 11 月 1 日：AutoGen 是 2023 年 10 月 GitHub 上最热门的存储库。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🎉 10 月 3 日：AutoGen 在 Github 上从 FLAML 中分离出来，并进行了重大论文更新（第一个版本于 8 月 16 日发布）。</font></font></p>
 
-## Installation
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/microsoft/FLAML"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🎉 3 月 29 日：AutoGen 首次在FLAML</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中创建</font><font style="vertical-align: inherit;">。</font></font></p>
 
-AutoGen requires **Python version >= 3.8**. It can be installed from pip:
+<h2 tabindex="-1" dir="auto"><a id="user-content-what-is-autogen" class="anchor" aria-hidden="true" tabindex="-1" href="#what-is-autogen"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">什么是 AutoGen</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AutoGen 是一个框架，支持使用多个代理来开发 LLM 应用程序，这些代理可以相互对话来解决任务。</font><font style="vertical-align: inherit;">AutoGen 代理是可定制的、可对话的，并且无缝地允许人类参与。</font><font style="vertical-align: inherit;">他们可以采用法学硕士、人力投入和工具组合的各种模式运作。</font></font></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/microsoft/autogen/blob/main/website/static/img/autogen_agentchat.png"><img src="https://github.com/microsoft/autogen/raw/main/website/static/img/autogen_agentchat.png" alt="AutoGen 概述" style="max-width: 100%;"></a></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AutoGen 可以轻松构建基于</font></font><a href="https://microsoft.github.io/autogen/docs/Use-Cases/agent_chat" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多代理对话</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的下一代 LLM 应用程序。</font><font style="vertical-align: inherit;">它简化了复杂的 LLM 工作流程的编排、自动化和优化。</font><font style="vertical-align: inherit;">它最大限度地提高了 LLM 模型的性能并克服了它们的弱点。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">它支持</font><font style="vertical-align: inherit;">复杂工作流程的</font></font><a href="https://microsoft.github.io/autogen/docs/Use-Cases/agent_chat#supporting-diverse-conversation-patterns" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多种对话模式。</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">借助可定制和可对话的代理，开发人员可以使用 AutoGen 构建各种涉及对话自主性、代理数量和代理对话拓扑的对话模式。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">它提供了一系列具有不同复杂性的工作系统。</font><font style="vertical-align: inherit;">这些系统涵盖</font><font style="vertical-align: inherit;">各种领域和复杂性</font></font><a href="https://microsoft.github.io/autogen/docs/Use-Cases/agent_chat#diverse-applications-implemented-with-autogen" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的广泛应用。</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这演示了 AutoGen 如何轻松支持不同的对话模式。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AutoGen 提供</font></font><a href="https://microsoft.github.io/autogen/docs/Use-Cases/enhanced_inference#api-unification" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">增强的 LLM 推理</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">它提供 API 统一和缓存等实用程序，以及错误处理、多配置推理、上下文编程等高级使用模式。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AutoGen由微软、宾夕法尼亚州立大学和华盛顿大学的合作</font></font><a href="https://microsoft.github.io/autogen/docs/Research" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">研究</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提供支持。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-quickstart" class="anchor" aria-hidden="true" tabindex="-1" href="#quickstart"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速开始</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开始玩的最简单方法是</font></font></p>
+<ol dir="auto">
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">单击下面使用 GitHub Codespace</font></font></p>
+<p dir="auto"><a href="https://codespaces.new/microsoft/autogen?quickstart=1" rel="nofollow"><img src="https://github.com/codespaces/badge.svg" alt="在 GitHub Codespaces 中打开" style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将 OAI_CONFIG_LIST_sample 复制到 ./notebook 文件夹，命名为 OAI_CONFIG_LIST，并设置正确的配置。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开始玩笔记本吧！</font></font></p>
+</li>
+</ol>
+<p dir="auto"><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">注意</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：OAI_CONFIG_LIST_sample 将 GPT-4 列为默认模型，因为这代表了我们当前的建议，并且已知与 AutoGen 配合良好。</font><font style="vertical-align: inherit;">如果您使用 GPT-4 以外的型号，则可能需要修改各种系统提示（特别是使用 GPT-3.5-turbo 等较弱的型号时）。</font><font style="vertical-align: inherit;">此外，如果您使用 OpenAI 或 Azure 托管的模型以外的模型，则可能会面临与对齐和安全相关的额外风险。</font><font style="vertical-align: inherit;">如果更新此默认值，请谨慎操作。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-installation" class="anchor" aria-hidden="true" tabindex="-1" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://microsoft.github.io/autogen/docs/Installation" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></a></h2>
+<h3 tabindex="-1" dir="auto"><a id="user-content-option-1-install-and-run-autogen-in-docker" class="anchor" aria-hidden="true" tabindex="-1" href="#option-1-install-and-run-autogen-in-docker"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选项 1. 在 Docker 中安装并运行 AutoGen</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://microsoft.github.io/autogen/docs/Installation#option-1-install-and-run-autogen-in-docker" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在此处</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">查找针对用户的详细说明</font><font style="vertical-align: inherit;">，并</font></font><a href="https://microsoft.github.io/autogen/docs/Contribute#docker" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在此处</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">查找针对开发人员的详细说明。</font></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-option-2-install-autogen-locally" class="anchor" aria-hidden="true" tabindex="-1" href="#option-2-install-autogen-locally"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选项 2.本地安装 AutoGen</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AutoGen 需要</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Python 版本 &gt;= 3.8, &lt; 3.12</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">可以从 pip 安装：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>pip install pyautogen</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install pyautogen" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装最少的依赖项，无需额外选项。</font><font style="vertical-align: inherit;">您可以根据需要的功能安装额外的选项。</font></font></p>
 
-```bash
-pip install pyautogen
-```
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://microsoft.github.io/autogen/docs/Installation#option-2-install-autogen-locally-using-virtual-environment" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在安装</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中查找更多选项</font><font style="vertical-align: inherit;">。</font></font></p>
 
-Minimal dependencies are installed without extra options. You can install extra options based on the feature you need.
-
-<!-- For example, use the following to install the dependencies needed by the [`blendsearch`](https://microsoft.github.io/FLAML/docs/Use-Cases/Tune-User-Defined-Function#blendsearch-economical-hyperparameter-optimization-with-blended-search-strategy) option.
-```bash
-pip install "pyautogen[blendsearch]"
-``` -->
-
-Find more options in [Installation](https://microsoft.github.io/autogen/docs/Installation).
-
-<!-- Each of the [`notebook examples`](https://github.com/microsoft/autogen/tree/main/notebook) may require a specific option to be installed. -->
-
-For [code execution](https://microsoft.github.io/autogen/docs/FAQ/#code-execution), we strongly recommend installing the python docker package, and using docker.
-
-For LLM inference configurations, check the [FAQs](https://microsoft.github.io/autogen/docs/FAQ#set-your-api-endpoints).
-
-## Multi-Agent Conversation Framework
-
-Autogen enables the next-gen LLM applications with a generic multi-agent conversation framework. It offers customizable and conversable agents that integrate LLMs, tools, and humans.
-By automating chat among multiple capable agents, one can easily make them collectively perform tasks autonomously or with human feedback, including tasks that require using tools via code.
-
-Features of this use case include:
-
-- **Multi-agent conversations**: AutoGen agents can communicate with each other to solve tasks. This allows for more complex and sophisticated applications than would be possible with a single LLM.
-- **Customization**: AutoGen agents can be customized to meet the specific needs of an application. This includes the ability to choose the LLMs to use, the types of human input to allow, and the tools to employ.
-- **Human participation**: AutoGen seamlessly allows human participation. This means that humans can provide input and feedback to the agents as needed.
-
-For [example](https://github.com/microsoft/autogen/blob/main/test/twoagent.py),
-
-```python
-from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">即使您是从 docker 本地安装 AutoGen，我们也建议</font><font style="vertical-align: inherit;">在 docker 中执行</font></font><a href="https://microsoft.github.io/autogen/docs/FAQ/#code-execution" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">代码。</font></font></a><font style="vertical-align: inherit;"></font><a href="https://microsoft.github.io/autogen/docs/Installation#docker" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请在此处</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">查找更多说明</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对于 LLM 推理配置，请查看</font></font><a href="https://microsoft.github.io/autogen/docs/FAQ#set-your-api-endpoints" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">常见问题解答</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-multi-agent-conversation-framework" class="anchor" aria-hidden="true" tabindex="-1" href="#multi-agent-conversation-framework"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多Agent对话框架</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://microsoft.github.io/autogen/docs/Use-Cases/agent_chat" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Autogen 通过通用的多代理对话</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">框架支持下一代 LLM 应用程序</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">它提供可定制且可对话的代理，将法学硕士、工具和人员集成在一起。</font><font style="vertical-align: inherit;">通过在多个有能力的代理之间自动进行聊天，人们可以轻松地让他们自主地或根据人工反馈集体执行任务，包括需要通过代码使用工具的任务。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该用例的特点包括：</font></font></p>
+<ul dir="auto">
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多代理对话</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：AutoGen 代理可以相互通信来解决任务。</font><font style="vertical-align: inherit;">与单一法学硕士相比，这允许更复杂和精密的应用程序。</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">定制</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：可以定制 AutoGen 代理以满足应用程序的特定需求。</font><font style="vertical-align: inherit;">这包括选择要使用的法学硕士、允许的人工输入类型以及要使用的工具的能力。</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">人类参与</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：AutoGen 无缝地允许人类参与。</font><font style="vertical-align: inherit;">这意味着人类可以根据需要向代理提供输入和反馈。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">例如</font><font style="vertical-align: inherit;">，</font></font><a href="https://github.com/microsoft/autogen/blob/main/test/twoagent.py"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">_</font></font></a><font style="vertical-align: inherit;"></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">from</span> <span class="pl-s1">autogen</span> <span class="pl-k">import</span> <span class="pl-v">AssistantAgent</span>, <span class="pl-v">UserProxyAgent</span>, <span class="pl-s1">config_list_from_json</span>
+<span class="pl-c"># Load LLM inference endpoints from an env variable or a file</span>
+<span class="pl-c"># See https://microsoft.github.io/autogen/docs/FAQ#set-your-api-endpoints</span>
+<span class="pl-c"># and OAI_CONFIG_LIST_sample</span>
+<span class="pl-s1">config_list</span> <span class="pl-c1">=</span> <span class="pl-en">config_list_from_json</span>(<span class="pl-s1">env_or_file</span><span class="pl-c1">=</span><span class="pl-s">"OAI_CONFIG_LIST"</span>)
+<span class="pl-c"># You can also set config_list directly as a list, for example, config_list = [{'model': 'gpt-4', 'api_key': '&lt;your OpenAI API key here&gt;'},]</span>
+<span class="pl-s1">assistant</span> <span class="pl-c1">=</span> <span class="pl-v">AssistantAgent</span>(<span class="pl-s">"assistant"</span>, <span class="pl-s1">llm_config</span><span class="pl-c1">=</span>{<span class="pl-s">"config_list"</span>: <span class="pl-s1">config_list</span>})
+<span class="pl-s1">user_proxy</span> <span class="pl-c1">=</span> <span class="pl-v">UserProxyAgent</span>(<span class="pl-s">"user_proxy"</span>, <span class="pl-s1">code_execution_config</span><span class="pl-c1">=</span>{<span class="pl-s">"work_dir"</span>: <span class="pl-s">"coding"</span>})
+<span class="pl-s1">user_proxy</span>.<span class="pl-en">initiate_chat</span>(<span class="pl-s1">assistant</span>, <span class="pl-s1">message</span><span class="pl-c1">=</span><span class="pl-s">"Plot a chart of NVDA and TESLA stock price change YTD."</span>)
+<span class="pl-c"># This initiates an automated chat between the two agents to solve the task</span></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
 # Load LLM inference endpoints from an env variable or a file
 # See https://microsoft.github.io/autogen/docs/FAQ#set-your-api-endpoints
 # and OAI_CONFIG_LIST_sample
-config_list = config_list_from_json(env_or_file="OAI_CONFIG_LIST")
-# You can also set config_list directly as a list, for example, config_list = [{'model': 'gpt-4', 'api_key': '<your OpenAI API key here>'},]  
-assistant = AssistantAgent("assistant", llm_config={"config_list": config_list})
-user_proxy = UserProxyAgent("user_proxy", code_execution_config={"work_dir": "coding"})
-user_proxy.initiate_chat(assistant, message="Plot a chart of NVDA and TESLA stock price change YTD.")
-# This initiates an automated chat between the two agents to solve the task
-```
+config_list = config_list_from_json(env_or_file=&quot;OAI_CONFIG_LIST&quot;)
+# You can also set config_list directly as a list, for example, config_list = [{'model': 'gpt-4', 'api_key': '<your OpenAI API key here>'},]
+assistant = AssistantAgent(&quot;assistant&quot;, llm_config={&quot;config_list&quot;: config_list})
+user_proxy = UserProxyAgent(&quot;user_proxy&quot;, code_execution_config={&quot;work_dir&quot;: &quot;coding&quot;})
+user_proxy.initiate_chat(assistant, message=&quot;Plot a chart of NVDA and TESLA stock price change YTD.&quot;)
+# This initiates an automated chat between the two agents to solve the task" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这个例子可以运行</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">python</span> <span class="pl-s1">test</span><span class="pl-c1">/</span><span class="pl-s1">twoagent</span>.<span class="pl-s1">py</span></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="python test/twoagent.py" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">克隆存储库后。</font><font style="vertical-align: inherit;">下图显示了 AutoGen 的示例对话流程。
+</font></font><a target="_blank" rel="noopener noreferrer" href="https://github.com/microsoft/autogen/blob/main/website/static/img/chat_example.png"><img src="https://github.com/microsoft/autogen/raw/main/website/static/img/chat_example.png" alt="代理聊天示例" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或者，此处的</font></font><a href="https://github.com/microsoft/autogen/blob/main/samples/simple_chat.py"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">示例代码</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">允许用户以 ChatGPT 风格与 AutoGen 代理聊天。</font><font style="vertical-align: inherit;">请查找</font><font style="vertical-align: inherit;">此功能的更多</font></font><a href="https://microsoft.github.io/autogen/docs/Examples#automated-multi-agent-chat" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">代码示例。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-enhanced-llm-inferences" class="anchor" aria-hidden="true" tabindex="-1" href="#enhanced-llm-inferences"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">增强的法学硕士推论</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Autogen 还有助于最大限度地提高 ChatGPT 和 GPT-4 等昂贵的法学硕士的效用。</font><font style="vertical-align: inherit;">它提供</font></font><a href="https://microsoft.github.io/autogen/docs/Use-Cases/enhanced_inference#api-unification" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">增强的 LLM 推理，</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">具有缓存、错误处理、多配置推理和模板等强大功能。</font></font></p>
 
-This example can be run with
-
-```python
-python test/twoagent.py
-```
-
-After the repo is cloned.
-The figure below shows an example conversation flow with AutoGen.
-![Agent Chat Example](https://github.com/microsoft/autogen/blob/main/website/static/img/chat_example.png)
-
-Please find more [code examples](https://microsoft.github.io/autogen/docs/Examples/AutoGen-AgentChat) for this feature.
-
-## Enhanced LLM Inferences
-
-Autogen also helps maximize the utility out of the expensive LLMs such as ChatGPT and GPT-4. It offers a drop-in replacement of `openai.Completion` or `openai.ChatCompletion` adding powerful functionalities like tuning, caching, error handling, and templating. For example, you can optimize generations by LLM with your own tuning data, success metrics, and budgets.
-
-```python
-# perform tuning
-config, analysis = autogen.Completion.tune(
-    data=tune_data,
-    metric="success",
-    mode="max",
-    eval_func=eval_func,
-    inference_budget=0.05,
-    optimization_budget=3,
-    num_samples=-1,
-)
-# perform inference for a test instance
-response = autogen.Completion.create(context=test_instance, **config)
-```
-
-Please find more [code examples](https://microsoft.github.io/autogen/docs/Examples/AutoGen-Inference) for this feature.
-
-## Documentation
-
-You can find detailed documentation about AutoGen [here](https://microsoft.github.io/autogen/).
-
-In addition, you can find:
-
-- [Research](https://microsoft.github.io/autogen/docs/Research), [blogposts](https://microsoft.github.io/autogen/blog) around AutoGen, and [Transparency FAQs](https://github.com/microsoft/autogen/blob/main/TRANSPARENCY_FAQS.md)
-
-- [Discord](https://discord.gg/pAbnFJrkgZ).
-
-- [Contributing guide](https://microsoft.github.io/autogen/docs/Contribute).
-
-## Citation
-
-[AutoGen](https://arxiv.org/abs/2308.08155).
-
-```
-@inproceedings{wu2023autogen,
+<h2 tabindex="-1" dir="auto"><a id="user-content-documentation" class="anchor" aria-hidden="true" tabindex="-1" href="#documentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://microsoft.github.io/autogen/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以在此处</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">找到有关 AutoGen 的详细文档</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此外，您还可以找到：</font></font></p>
+<ul dir="auto">
+<li>
+<p dir="auto"><a href="https://microsoft.github.io/autogen/docs/Research" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关 AutoGen 的研究</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://microsoft.github.io/autogen/blog" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">博客文章</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以及</font></font><a href="https://github.com/microsoft/autogen/blob/main/TRANSPARENCY_FAQS.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">透明度常见问题解答</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><a href="https://discord.gg/pAbnFJrkgZ" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">不和谐</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><a href="https://microsoft.github.io/autogen/docs/Contribute" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献指南</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><a href="https://github.com/orgs/microsoft/projects/989/views/3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">路线图</font></font></a></p>
+</li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-related-papers" class="anchor" aria-hidden="true" tabindex="-1" href="#related-papers"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">相关论文</font></font></h2>
+<p dir="auto"><a href="https://arxiv.org/abs/2308.08155" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动生成器</font></font></a></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>@inproceedings{wu2023autogen,
       title={AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework},
-      author={Qingyun Wu and Gagan Bansal and Jieyu Zhang and Yiran Wu and Shaokun Zhang and Erkang Zhu and Beibin Li and Li Jiang and Xiaoyun Zhang and Chi Wang},
+      author={Qingyun Wu and Gagan Bansal and Jieyu Zhang and Yiran Wu and Beibin Li and Erkang Zhu and Li Jiang and Xiaoyun Zhang and Shaokun Zhang and Jiale Liu and Ahmed Hassan Awadallah and Ryen W White and Doug Burger and Chi Wang},
       year={2023},
       eprint={2308.08155},
       archivePrefix={arXiv},
       primaryClass={cs.AI}
 }
-```
-
-[EcoOptiGen](https://arxiv.org/abs/2303.04673).
-
-```
-@inproceedings{wang2023EcoOptiGen,
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@inproceedings{wu2023autogen,
+      title={AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework},
+      author={Qingyun Wu and Gagan Bansal and Jieyu Zhang and Yiran Wu and Beibin Li and Erkang Zhu and Li Jiang and Xiaoyun Zhang and Shaokun Zhang and Jiale Liu and Ahmed Hassan Awadallah and Ryen W White and Doug Burger and Chi Wang},
+      year={2023},
+      eprint={2308.08155},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI}
+}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><a href="https://arxiv.org/abs/2303.04673" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">生态优化</font></font></a></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>@inproceedings{wang2023EcoOptiGen,
     title={Cost-Effective Hyperparameter Optimization for Large Language Model Generation Inference},
     author={Chi Wang and Susan Xueqing Liu and Ahmed H. Awadallah},
     year={2023},
     booktitle={AutoML'23},
 }
-```
-
-[MathChat](https://arxiv.org/abs/2306.01337).
-
-```
-@inproceedings{wu2023empirical,
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@inproceedings{wang2023EcoOptiGen,
+    title={Cost-Effective Hyperparameter Optimization for Large Language Model Generation Inference},
+    author={Chi Wang and Susan Xueqing Liu and Ahmed H. Awadallah},
+    year={2023},
+    booktitle={AutoML'23},
+}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><a href="https://arxiv.org/abs/2306.01337" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数学聊天室</font></font></a></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>@inproceedings{wu2023empirical,
     title={An Empirical Study on Challenging Math Problem Solving with GPT-4},
     author={Yiran Wu and Feiran Jia and Shaokun Zhang and Hangyu Li and Erkang Zhu and Yue Wang and Yin Tat Lee and Richard Peng and Qingyun Wu and Chi Wang},
     year={2023},
     booktitle={ArXiv preprint arXiv:2306.01337},
 }
-```
-
-## Contributing
-
-This project welcomes contributions and suggestions. Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
-
-If you are new to GitHub [here](https://help.github.com/categories/collaborating-with-issues-and-pull-requests/) is a detailed help source on getting involved with development on GitHub.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-# Legal Notices
-
-Microsoft and any contributors grant you a license to the Microsoft documentation and other content
-in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
-see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the
-[LICENSE-CODE](LICENSE-CODE) file.
-
-Microsoft, Windows, Microsoft Azure, and/or other Microsoft products and services referenced in the documentation
-may be either trademarks or registered trademarks of Microsoft in the United States and/or other countries.
-The licenses for this project do not grant you rights to use any Microsoft names, logos, or trademarks.
-Microsoft's general trademark guidelines can be found at http://go.microsoft.com/fwlink/?LinkID=254653.
-
-Privacy information can be found at https://privacy.microsoft.com/en-us/
-
-Microsoft and any contributors reserve all other rights, whether under their respective copyrights, patents,
-or trademarks, whether by implication, estoppel, or otherwise.
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@inproceedings{wu2023empirical,
+    title={An Empirical Study on Challenging Math Problem Solving with GPT-4},
+    author={Yiran Wu and Feiran Jia and Shaokun Zhang and Hangyu Li and Erkang Zhu and Yue Wang and Yin Tat Lee and Richard Peng and Qingyun Wu and Chi Wang},
+    year={2023},
+    booktitle={ArXiv preprint arXiv:2306.01337},
+}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h2 tabindex="-1" dir="auto"><a id="user-content-contributing" class="anchor" aria-hidden="true" tabindex="-1" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目欢迎贡献和建议。</font><font style="vertical-align: inherit;">大多数贡献都要求您同意贡献者许可协议 (CLA)，声明您有权并且实际上授予我们使用您的贡献的权利。</font><font style="vertical-align: inherit;">有关详细信息，请访问</font></font><a href="https://cla.opensource.microsoft.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://cla.opensource.microsoft.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您是 GitHub 新手，</font></font><a href="https://help.github.com/categories/collaborating-with-issues-and-pull-requests/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这里</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关于参与 GitHub 开发的详细帮助资源。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当您提交拉取请求时，CLA 机器人将自动确定您是否需要提供 CLA 并适当地修饰 PR（例如，状态检查、评论）。</font><font style="vertical-align: inherit;">只需按照机器人提供的说明进行操作即可。</font><font style="vertical-align: inherit;">您只需使用我们的 CLA 在所有存储库中执行一次此操作。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目采用了</font></font><a href="https://opensource.microsoft.com/codeofconduct/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">微软开源行为准则</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">有关详细信息，请参阅</font></font><a href="https://opensource.microsoft.com/codeofconduct/faq/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行为准则常见问题解答</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或联系</font></font><a href="mailto:opencode@microsoft.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">opencode@microsoft.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提出任何其他问题或意见。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-contributors-wall" class="anchor" aria-hidden="true" tabindex="-1" href="#contributors-wall"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献者墙</font></font></h2>
+<a href="https://github.com/microsoft/autogen/graphs/contributors">
+  <img src="https://camo.githubusercontent.com/c8c3877b34ad56436eaa3b32e2932523cecd9867aafe0e980c88655885145dc3/68747470733a2f2f636f6e747269622e726f636b732f696d6167653f7265706f3d6d6963726f736f66742f6175746f67656e266d61783d323030" data-canonical-src="https://contrib.rocks/image?repo=microsoft/autogen&amp;max=200" style="max-width: 100%;">
+</a>
+<h1 tabindex="-1" dir="auto"><a id="user-content-legal-notices" class="anchor" aria-hidden="true" tabindex="-1" href="#legal-notices"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">法律声明</font></font></h1>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://creativecommons.org/licenses/by/4.0/legalcode" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Microsoft 和任何贡献者根据知识共享署名 4.0 国际公共</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可证 向您授予此存储库中的 Microsoft 文档和其他内容的许可证</font><font style="vertical-align: inherit;">，请参阅</font></font><a href="/microsoft/autogen/blob/main/LICENSE"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可证文件，并根据</font></font></a><font style="vertical-align: inherit;"></font><a href="https://opensource.org/licenses/MIT" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MIT 许可证</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">向您授予对存储库中任何代码的许可证</font><font style="vertical-align: inherit;">，请参阅</font></font><a href="/microsoft/autogen/blob/main/LICENSE-CODE"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可证代码</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件
+</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档中引用的 Microsoft、Windows、Microsoft Azure 和/或其他 Microsoft 产品和服务可能是 Microsoft 在美国和/或其他国家/地区的商标或注册商标。</font><font style="vertical-align: inherit;">此项目的许可证不授予您使用任何 Microsoft 名称、徽标或商标的权利。</font></font><a href="http://go.microsoft.com/fwlink/?LinkID=254653" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Microsoft 的一般商标指南可在http://go.microsoft.com/fwlink/?LinkID=254653</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上找到</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><a href="https://privacy.microsoft.com/en-us/" rel="nofollow"><font style="vertical-align: inherit;">隐私信息可在https://privacy.microsoft.com/en-us/</font></a><font style="vertical-align: inherit;">找到</font></font><a href="https://privacy.microsoft.com/en-us/" rel="nofollow"><font style="vertical-align: inherit;"></font></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Microsoft 和任何贡献者保留所有其他权利，无论是根据其各自的版权、专利或商标，无论是通过暗示、禁止反言还是其他方式。</font></font></p>
+</article></div>
